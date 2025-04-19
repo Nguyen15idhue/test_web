@@ -140,7 +140,7 @@ unset($_SESSION['form_data']);
         <h2>Đăng Ký Tài Khoản</h2>
 
         <?php if ($success_message): ?>
-            <div class="success-message"><?php echo htmlspecialchars($success_message); ?></div>
+            <div class="success-message" id="successMessage"><?php echo htmlspecialchars($success_message); ?></div>
         <?php endif; ?>
 
         <?php if (!empty($errors)): ?>
@@ -184,29 +184,8 @@ unset($_SESSION['form_data']);
     </div>
 
     <script>
-        // function toggleCompanyInfo() {
-        //     const checkbox = document.getElementById('is_company');
-        //     const companyInfoSection = document.getElementById('companyInfoSection');
-        //     const taxCodeInput = document.getElementById('tax_code');
-        //     const companyNameInput = document.getElementById('company_name'); // Thêm dòng này
-
-        //     if (checkbox.checked) {
-        //         companyInfoSection.style.display = 'block';
-        //         taxCodeInput.required = true; // Bắt buộc nhập mã số thuế nếu là công ty
-        //         // companyNameInput không cần required trừ khi bạn muốn
-        //     } else {
-        //         companyInfoSection.style.display = 'none';
-        //         taxCodeInput.required = false;
-        //         taxCodeInput.value = ''; // Xóa giá trị khi ẩn
-        //         companyNameInput.value = ''; // Xóa giá trị khi ẩn
-        //         document.getElementById('tax_registered').checked = false; // Bỏ check khi ẩn
-        //     }
-        // }
-
         // Gọi hàm khi trang tải để đảm bảo trạng thái đúng nếu có dữ liệu cũ
         document.addEventListener('DOMContentLoaded', function() {
-            toggleCompanyInfo(); // Ensure correct state on load
-
             const successMessage = document.getElementById('successMessage');
             if (successMessage) {
                 setTimeout(() => {
